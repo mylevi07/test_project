@@ -14,6 +14,13 @@ class APIClient:
     def post(self, endpoint, **kwargs):
         return self.session.post(f"{self.base_url}/{endpoint.lstrip('/')}", **kwargs)
 
+    def put(self, endpoint, **kwargs):
+        return self.session.put(f"{self.base_url}/{endpoint.lstrip('/')}", **kwargs)
+
+    def delete(self, endpoint, **kwargs):
+        return self.session.delete(f"{self.base_url}/{endpoint.lstrip('/')}", **kwargs)
+
+
 def load_config():
     config_path = Path(__file__).parent.parent / "config" / "config.yaml"
     with open(config_path, 'r', encoding='utf-8') as f:
