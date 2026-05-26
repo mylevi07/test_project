@@ -1,17 +1,26 @@
 import pytest
-from common.web_driver import get_page
-from common.api_client import load_config
+from playwright.sync_api import sync_playwright
+from pages.login_page import LoginPage
 
-config = load_config()
-url = config["sauce_demo"]["url"]
-user = config["sauce_demo"]["credentials"]["standard_user"]["username"]
-pwd = config["sauce_demo"]["credentials"]["standard_user"]["password"]
+@pytest.fixture(scope="function")
+def page():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)  # headless=True 可不显示浏览器
+        context = browser.new_context()
+        page = context.new_page()
+        yield page
+        context.close()
+        browser.close()
 
-def test_login():
-    page, browser = get_page()
-    page.goto(url)
-    page.fill("#user-name", user)
-    page.fill("#password", pwd)
-    page.click("#login-button")
-    assert "inventory.html" in page.url
-    browser.close()
+def test_login_success(page):
+    login_page = LoginPage(page)
+    login_page.navigate()
+    login_page.login("standard_user", "secret_sauce")
+    assert page.url == "https://www.saucedemo.com/inventory.html"
+
+def test_login_failed(page):
+    login_page = LoginPage(page)
+    login_page.navigate()
+    login_page.login("locked_out_user", "secret_sauce")
+    error = login_page.get_error_message()
+    assert "Sorry, this user has been locked out" in error
