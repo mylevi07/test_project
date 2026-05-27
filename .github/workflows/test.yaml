@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest requests playwright pytest-html
+          pip install -r requirements.txt
           playwright install chromium --with-deps
 
       # 4. 运行 API 测试（生成报告）

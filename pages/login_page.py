@@ -1,4 +1,4 @@
-# pages/login_page.py（或你当前放的 common/login_page.py）
+# pages/login_page.py
 from playwright.sync_api import Page
 from common.web_base import WebBase
 
