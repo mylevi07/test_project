@@ -5,12 +5,14 @@ from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
+import os
 
 
 @pytest.fixture(scope="function")
 def page():
+    headless = os.getenv("CI", "false").lower() == "true"  # CI 环境变量为 true 时无头运行
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=headless)
         context = browser.new_context()
         page = context.new_page()
         yield page

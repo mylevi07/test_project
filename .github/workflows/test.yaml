@@ -11,8 +11,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:PYTHONPATH: ${{ github.workspace }}  
-
+    env:
+      PYTHONPATH: ${{ github.workspace }}  
     steps:
       # 1. 检出代码
       - name: Checkout code
