@@ -50,8 +50,11 @@ class WebBase:
         if name is None:
             name = datetime.now().strftime("%Y%m%d_%H%M%S")
         filepath = os.path.join(self.screenshot_dir, f"{name}.png")
-        self.page.screenshot(path=filepath)
-        logger.info(f"截图已保存: {filepath}")
+        try:
+            self.page.screenshot(path=filepath)
+            logger.info(f"截图已保存: {filepath}")
+        except Exception as e:
+            logger.error(f"截图失败: {e}")
         return filepath
 
     def assert_url_contains(self, expected: str):
