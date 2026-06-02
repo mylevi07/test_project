@@ -1,0 +1,38 @@
+2026-06-02 22:50:37,793 - api_client - INFO - GET https://jsonplaceholder.typicode.com/users
+2026-06-02 22:50:39,026 - api_client - DEBUG - Response 200: [
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwen
+2026-06-02 22:50:39,031 - api_client - INFO - GET https://jsonplaceholder.typicode.com/users/1
+2026-06-02 22:50:39,259 - api_client - DEBUG - Response 200: {
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipco
+2026-06-02 22:50:39,265 - api_client - INFO - POST https://jsonplaceholder.typicode.com/posts
+2026-06-02 22:50:39,701 - api_client - DEBUG - Response 201: {
+  "title": "test title",
+  "body": "test body",
+  "userId": 1,
+  "id": 101
+}
+2026-06-02 22:50:39,708 - api_client - INFO - PUT https://jsonplaceholder.typicode.com/posts/1
+2026-06-02 22:50:40,168 - api_client - DEBUG - Response 200: {
+  "id": 1,
+  "title": "updated title",
+  "body": "updated body",
+  "userId": 1
+}
+2026-06-02 22:50:40,173 - api_client - INFO - DELETE https://jsonplaceholder.typicode.com/posts/1
+2026-06-02 22:50:40,452 - api_client - DEBUG - Response 200: {}
