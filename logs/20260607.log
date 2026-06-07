@@ -1,0 +1,190 @@
+2026-06-07 22:16:36,710 - test - INFO - ========== START: test_login_data_driven[\u6b63\u5e38\u767b\u5f55] ==========
+2026-06-07 22:16:49,141 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:16:49,194 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:16:49,239 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:16:49,369 - web_base - INFO - 断言URL包含: inventory.html, 当前URL: https://www.saucedemo.com/inventory.html
+2026-06-07 22:16:49,593 - web_base - INFO - 截图已保存: screenshots\login_正常登录.png
+2026-06-07 22:16:49,925 - test - INFO - ========== END: test_login_data_driven[\u6b63\u5e38\u767b\u5f55] ==========
+2026-06-07 22:16:49,927 - test - INFO - ========== START: test_login_data_driven[\u9501\u5b9a\u7528\u6237\u767b\u5f55] ==========
+2026-06-07 22:16:54,998 - web_base - INFO - 输入文本到 #user-name: locked_out_user
+2026-06-07 22:16:55,059 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:16:55,089 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:16:55,183 - web_base - DEBUG - 获取文本 [data-test='error']: Epic sadface: Sorry, this user has been locked out.
+2026-06-07 22:16:55,275 - web_base - INFO - 截图已保存: screenshots\login_锁定用户登录.png
+2026-06-07 22:16:55,565 - test - INFO - ========== END: test_login_data_driven[\u9501\u5b9a\u7528\u6237\u767b\u5f55] ==========
+2026-06-07 22:16:55,567 - test - INFO - ========== START: test_login_data_driven[\u7a7a\u7528\u6237\u540d\u767b\u5f55] ==========
+2026-06-07 22:17:04,969 - web_base - INFO - 输入文本到 #user-name: 
+2026-06-07 22:17:05,022 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:17:05,056 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:17:05,117 - web_base - DEBUG - 获取文本 [data-test='error']: Epic sadface: Username is required
+2026-06-07 22:17:05,200 - web_base - INFO - 截图已保存: screenshots\login_空用户名登录.png
+2026-06-07 22:17:05,484 - test - INFO - ========== END: test_login_data_driven[\u7a7a\u7528\u6237\u540d\u767b\u5f55] ==========
+2026-06-07 22:17:05,486 - test - INFO - ========== START: test_login_success ==========
+2026-06-07 22:17:16,702 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:17:16,763 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:17:16,792 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:17:16,873 - web_base - INFO - 断言URL包含: inventory.html, 当前URL: https://www.saucedemo.com/inventory.html
+2026-06-07 22:17:16,991 - web_base - INFO - 截图已保存: screenshots\login_success.png
+2026-06-07 22:17:17,456 - test - INFO - ========== END: test_login_success ==========
+2026-06-07 22:17:17,457 - test - INFO - ========== START: test_login_failed ==========
+2026-06-07 22:17:22,515 - web_base - INFO - 输入文本到 #user-name: locked_out_user
+2026-06-07 22:17:22,572 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:17:22,601 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:17:22,664 - web_base - DEBUG - 获取文本 [data-test='error']: Epic sadface: Sorry, this user has been locked out.
+2026-06-07 22:17:22,798 - web_base - INFO - 截图已保存: screenshots\login_failed.png
+2026-06-07 22:17:23,079 - test - INFO - ========== END: test_login_failed ==========
+2026-06-07 22:17:23,081 - test - INFO - ========== START: test_login_no_username ==========
+2026-06-07 22:17:29,869 - web_base - INFO - 输入文本到 #user-name: 
+2026-06-07 22:17:29,924 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:17:29,956 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:17:30,053 - web_base - DEBUG - 获取文本 [data-test='error']: Epic sadface: Username is required
+2026-06-07 22:17:30,159 - web_base - INFO - 截图已保存: screenshots\login_no_username.png
+2026-06-07 22:17:30,455 - test - INFO - ========== END: test_login_no_username ==========
+2026-06-07 22:17:30,456 - test - INFO - ========== START: test_sort_products_and_select_first ==========
+2026-06-07 22:17:36,216 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:17:36,280 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:17:36,312 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:17:36,497 - web_base - DEBUG - 获取文本 .inventory_item_name: Sauce Labs Onesie
+2026-06-07 22:17:36,509 - web_base - INFO - 点击元素: .inventory_item_name
+2026-06-07 22:17:36,918 - test - INFO - ========== END: test_sort_products_and_select_first ==========
+2026-06-07 22:17:36,920 - test - INFO - ========== START: test_add_item_to_cart ==========
+2026-06-07 22:17:43,022 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:17:43,092 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:17:43,129 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:17:43,222 - web_base - INFO - 点击元素: button.btn_inventory
+2026-06-07 22:17:43,303 - web_base - DEBUG - 获取文本 .shopping_cart_badge: 1
+2026-06-07 22:17:43,313 - web_base - INFO - 点击元素: .shopping_cart_link
+2026-06-07 22:17:43,709 - test - INFO - ========== END: test_add_item_to_cart ==========
+2026-06-07 22:17:43,712 - test - INFO - ========== START: test_complete_checkout ==========
+2026-06-07 22:17:57,810 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:17:57,868 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:17:57,899 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:17:58,009 - web_base - INFO - 点击元素: button.btn_inventory
+2026-06-07 22:17:58,056 - web_base - INFO - 点击元素: .shopping_cart_link
+2026-06-07 22:17:58,118 - web_base - INFO - 点击元素: #checkout
+2026-06-07 22:17:58,189 - web_base - INFO - 输入文本到 #first-name: Test
+2026-06-07 22:17:58,227 - web_base - INFO - 输入文本到 #last-name: User
+2026-06-07 22:17:58,258 - web_base - INFO - 输入文本到 #postal-code: 12345
+2026-06-07 22:17:58,291 - web_base - INFO - 点击元素: #continue
+2026-06-07 22:17:58,364 - web_base - INFO - 点击元素: #finish
+2026-06-07 22:17:58,446 - web_base - DEBUG - 获取文本 .complete-header: Thank you for your order!
+2026-06-07 22:17:58,785 - test - INFO - ========== END: test_complete_checkout ==========
+2026-06-07 22:18:18,432 - test - INFO - ========== START: test_get_all_users ==========
+2026-06-07 22:18:18,433 - api_client - INFO - GET https://jsonplaceholder.typicode.com/users
+2026-06-07 22:18:19,888 - api_client - DEBUG - Response 200: [
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwen
+2026-06-07 22:18:19,890 - test - INFO - ========== END: test_get_all_users ==========
+2026-06-07 22:18:19,893 - test - INFO - ========== START: test_get_single_user ==========
+2026-06-07 22:18:19,894 - api_client - INFO - GET https://jsonplaceholder.typicode.com/users/1
+2026-06-07 22:18:20,208 - api_client - DEBUG - Response 200: {
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipco
+2026-06-07 22:18:20,210 - test - INFO - ========== END: test_get_single_user ==========
+2026-06-07 22:18:20,212 - test - INFO - ========== START: test_create_post ==========
+2026-06-07 22:18:20,213 - api_client - INFO - POST https://jsonplaceholder.typicode.com/posts
+2026-06-07 22:18:20,513 - api_client - DEBUG - Response 201: {
+  "title": "test title",
+  "body": "test body",
+  "userId": 1,
+  "id": 101
+}
+2026-06-07 22:18:20,515 - test - INFO - ========== END: test_create_post ==========
+2026-06-07 22:18:20,518 - test - INFO - ========== START: test_update_post ==========
+2026-06-07 22:18:20,519 - api_client - INFO - PUT https://jsonplaceholder.typicode.com/posts/1
+2026-06-07 22:18:21,015 - api_client - DEBUG - Response 200: {
+  "id": 1,
+  "title": "updated title",
+  "body": "updated body",
+  "userId": 1
+}
+2026-06-07 22:18:21,018 - test - INFO - ========== END: test_update_post ==========
+2026-06-07 22:18:21,021 - test - INFO - ========== START: test_delete_post ==========
+2026-06-07 22:18:21,022 - api_client - INFO - DELETE https://jsonplaceholder.typicode.com/posts/1
+2026-06-07 22:18:22,049 - api_client - DEBUG - Response 200: {}
+2026-06-07 22:18:22,051 - test - INFO - ========== END: test_delete_post ==========
+2026-06-07 22:18:22,054 - test - INFO - ========== START: test_login_data_driven[\u6b63\u5e38\u767b\u5f55] ==========
+2026-06-07 22:18:34,246 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:18:34,305 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:18:34,349 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:18:34,457 - web_base - INFO - 断言URL包含: inventory.html, 当前URL: https://www.saucedemo.com/inventory.html
+2026-06-07 22:18:34,638 - web_base - INFO - 截图已保存: screenshots\login_正常登录.png
+2026-06-07 22:18:34,991 - test - INFO - ========== END: test_login_data_driven[\u6b63\u5e38\u767b\u5f55] ==========
+2026-06-07 22:18:34,994 - test - INFO - ========== START: test_login_data_driven[\u9501\u5b9a\u7528\u6237\u767b\u5f55] ==========
+2026-06-07 22:18:40,634 - web_base - INFO - 输入文本到 #user-name: locked_out_user
+2026-06-07 22:18:40,698 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:18:40,741 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:18:40,830 - web_base - DEBUG - 获取文本 [data-test='error']: Epic sadface: Sorry, this user has been locked out.
+2026-06-07 22:18:40,969 - web_base - INFO - 截图已保存: screenshots\login_锁定用户登录.png
+2026-06-07 22:18:41,353 - test - INFO - ========== END: test_login_data_driven[\u9501\u5b9a\u7528\u6237\u767b\u5f55] ==========
+2026-06-07 22:18:41,356 - test - INFO - ========== START: test_login_data_driven[\u7a7a\u7528\u6237\u540d\u767b\u5f55] ==========
+2026-06-07 22:18:51,231 - web_base - INFO - 输入文本到 #user-name: 
+2026-06-07 22:18:51,284 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:18:51,320 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:18:51,412 - web_base - DEBUG - 获取文本 [data-test='error']: Epic sadface: Username is required
+2026-06-07 22:18:51,562 - web_base - INFO - 截图已保存: screenshots\login_空用户名登录.png
+2026-06-07 22:18:51,913 - test - INFO - ========== END: test_login_data_driven[\u7a7a\u7528\u6237\u540d\u767b\u5f55] ==========
+2026-06-07 22:18:51,916 - test - INFO - ========== START: test_login_success ==========
+2026-06-07 22:18:56,607 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:18:56,695 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:18:56,735 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:18:56,825 - web_base - INFO - 断言URL包含: inventory.html, 当前URL: https://www.saucedemo.com/inventory.html
+2026-06-07 22:18:56,933 - web_base - INFO - 截图已保存: screenshots\login_success.png
+2026-06-07 22:18:57,287 - test - INFO - ========== END: test_login_success ==========
+2026-06-07 22:18:57,290 - test - INFO - ========== START: test_login_failed ==========
+2026-06-07 22:19:02,249 - web_base - INFO - 输入文本到 #user-name: locked_out_user
+2026-06-07 22:19:02,313 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:19:02,346 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:19:02,440 - web_base - DEBUG - 获取文本 [data-test='error']: Epic sadface: Sorry, this user has been locked out.
+2026-06-07 22:19:02,555 - web_base - INFO - 截图已保存: screenshots\login_failed.png
+2026-06-07 22:19:02,914 - test - INFO - ========== END: test_login_failed ==========
+2026-06-07 22:19:02,917 - test - INFO - ========== START: test_login_no_username ==========
+2026-06-07 22:19:07,429 - web_base - INFO - 输入文本到 #user-name: 
+2026-06-07 22:19:07,487 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:19:07,533 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:19:07,605 - web_base - DEBUG - 获取文本 [data-test='error']: Epic sadface: Username is required
+2026-06-07 22:19:07,712 - web_base - INFO - 截图已保存: screenshots\login_no_username.png
+2026-06-07 22:19:08,062 - test - INFO - ========== END: test_login_no_username ==========
+2026-06-07 22:19:08,064 - test - INFO - ========== START: test_sort_products_and_select_first ==========
+2026-06-07 22:19:12,188 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:19:12,271 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:19:12,316 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:19:12,491 - web_base - DEBUG - 获取文本 .inventory_item_name: Sauce Labs Onesie
+2026-06-07 22:19:12,510 - web_base - INFO - 点击元素: .inventory_item_name
+2026-06-07 22:19:12,945 - test - INFO - ========== END: test_sort_products_and_select_first ==========
+2026-06-07 22:19:12,947 - test - INFO - ========== START: test_add_item_to_cart ==========
+2026-06-07 22:19:18,536 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:19:18,597 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:19:18,639 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:19:18,750 - web_base - INFO - 点击元素: button.btn_inventory
+2026-06-07 22:19:18,824 - web_base - DEBUG - 获取文本 .shopping_cart_badge: 1
+2026-06-07 22:19:18,841 - web_base - INFO - 点击元素: .shopping_cart_link
+2026-06-07 22:19:19,307 - test - INFO - ========== END: test_add_item_to_cart ==========
+2026-06-07 22:19:19,310 - test - INFO - ========== START: test_complete_checkout ==========
+2026-06-07 22:19:23,246 - web_base - INFO - 输入文本到 #user-name: standard_user
+2026-06-07 22:19:23,320 - web_base - INFO - 输入文本到 #password: secret_sauce
+2026-06-07 22:19:23,358 - web_base - INFO - 点击元素: #login-button
+2026-06-07 22:19:23,460 - web_base - INFO - 点击元素: button.btn_inventory
+2026-06-07 22:19:23,522 - web_base - INFO - 点击元素: .shopping_cart_link
+2026-06-07 22:19:23,591 - web_base - INFO - 点击元素: #checkout
+2026-06-07 22:19:23,664 - web_base - INFO - 输入文本到 #first-name: Test
+2026-06-07 22:19:23,706 - web_base - INFO - 输入文本到 #last-name: User
+2026-06-07 22:19:23,740 - web_base - INFO - 输入文本到 #postal-code: 12345
+2026-06-07 22:19:23,772 - web_base - INFO - 点击元素: #continue
+2026-06-07 22:19:23,852 - web_base - INFO - 点击元素: #finish
+2026-06-07 22:19:23,940 - web_base - DEBUG - 获取文本 .complete-header: Thank you for your order!
+2026-06-07 22:19:24,332 - test - INFO - ========== END: test_complete_checkout ==========

@@ -1,0 +1,15 @@
+# testdata/login_data.yaml
+- username: standard_user
+  password: ${SAUCEDEMO_PASSWORD}
+  expected_url: inventory.html
+  test_name: 正常登录
+
+- username: locked_out_user
+  password: secret_sauce
+  expected_error: Sorry, this user has been locked out
+  test_name: 锁定用户登录
+
+- username: ""
+  password: secret_sauce
+  expected_error: Username is required
+  test_name: 空用户名登录
