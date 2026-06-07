@@ -2,16 +2,29 @@
 import os
 import re
 import yaml
+import warnings
 from pathlib import Path
 
+# 敏感信息的默认值（仅用于公开的测试环境）
+_DEFAULT_SECRETS = {
+    "SAUCEDEMO_PASSWORD": "secret_sauce",
+}
+
 def _replace_env_vars(data):
-    """递归替换数据中的 ${ENV_VAR} 占位符"""
+    """递归替换数据中的 ${ENV_VAR} 占位符，未设置则使用默认值并警告"""
     if isinstance(data, str):
         for match in re.finditer(r'\$\{(\w+)\}', data):
             var_name = match.group(1)
             env_value = os.getenv(var_name, "")
             if not env_value:
-                raise ValueError(f"环境变量 {var_name} 未设置，请先设置后再运行测试")
+                if var_name in _DEFAULT_SECRETS:
+                    env_value = _DEFAULT_SECRETS[var_name]
+                    warnings.warn(
+                        f"环境变量 {var_name} 未设置，使用默认值（仅用于公开测试）",
+                        stacklevel=2
+                    )
+                else:
+                    raise ValueError(f"环境变量 {var_name} 未设置，且没有默认值")
             data = data.replace(f"${{{var_name}}}", env_value)
         return data
     elif isinstance(data, dict):

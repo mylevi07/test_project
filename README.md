@@ -25,7 +25,6 @@
 ├── .github/ # CI/CD 配置（GitHub Actions）
 └── requirements.txt # 依赖清单
 
-
 ## 快速开始
 ```bash
 # 1. 安装依赖
@@ -46,11 +45,10 @@ pytest testcases/ --env=staging
 
 数据驱动：YAML 管理测试数据，@pytest.mark.parametrize 参数化
 
-安全机制：敏感信息通过 ${ENV_VAR} 占位符 + 环境变量注入，不提交明文密码
+安全机制：敏感信息通过 ${ENV_VAR} 占位符 + 环境变量注入，永不提交明文密码
 
 Page Object：封装页面元素与操作，WebBase 基类提供通用操作复用
 
 CI/CD：GitHub Actions 自动执行全量回归，生成 HTML 报告
 
 日志与截图：运行日志写入 logs/，失败自动截图到 screenshots/
-
