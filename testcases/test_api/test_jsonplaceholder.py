@@ -62,3 +62,19 @@ def test_delete_post():
     post_id = 1
     response = client.delete(f"/posts/{post_id}")
     assert response.status_code in [200, 204], f"Expected 200 or 204, got {response.status_code}"
+
+
+def test_get_nonexistent_user():
+    """反向：获取不存在的用户，应返回 404"""
+    response = client.get("/users/999999999")
+    assert response.status_code == 404, f"Expected 404, got {response.status_code}"
+
+
+def test_create_post_response_schema():
+    """可靠性：创建帖子响应包含必要字段，且 title 与入参一致"""
+    payload = {"title": "schema check", "body": "body", "userId": 1}
+    response = client.post("/posts", json=payload)
+    assert response.status_code == 201, f"Expected 201, got {response.status_code}"
+    data = response.json()
+    assert {"title", "id", "userId"} <= set(data.keys())
+    assert data["title"] == payload["title"]

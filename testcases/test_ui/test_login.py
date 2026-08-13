@@ -40,30 +40,28 @@ def test_login_data_driven(page, data):
         assert data["expected_error"] in error
         login_page.take_screenshot(f"login_{data['test_name']}")
 
-# ==================== 原有手动用例（保留） ====================
+# ==================== 登录反向用例（补充数据驱动未覆盖的边界） ====================
 
-def test_login_success(page):
+def test_login_wrong_password(page):
+    """反向：正确用户名 + 错误密码，应被拒绝"""
     login_page = LoginPage(page)
     login_page.navigate()
-    login_page.login("standard_user", "secret_sauce")
-    login_page.assert_url_contains("inventory.html")
-    login_page.take_screenshot("login_success")
+    login_page.login("standard_user", "wrong_password")
+    assert "Epic sadface" in login_page.get_error_message()
 
-def test_login_failed(page):
+def test_login_empty_password(page):
+    """反向：密码为空，应被拒绝"""
     login_page = LoginPage(page)
     login_page.navigate()
-    login_page.login("locked_out_user", "secret_sauce")
-    error = login_page.get_error_message()
-    assert "Sorry, this user has been locked out" in error
-    login_page.take_screenshot("login_failed")
+    login_page.login("standard_user", "")
+    assert "Epic sadface" in login_page.get_error_message()
 
-def test_login_no_username(page):
+def test_login_special_chars_username(page):
+    """反向：用户名含特殊字符（注入风格输入），应被拒绝"""
     login_page = LoginPage(page)
     login_page.navigate()
-    login_page.login("", "secret_sauce")
-    error = login_page.get_error_message()
-    assert "Username is required" in error
-    login_page.take_screenshot("login_no_username")
+    login_page.login("' OR '1'='1", "secret_sauce")
+    assert "Epic sadface" in login_page.get_error_message()
 
 # ==================== 业务流程用例 ====================
 

@@ -6,7 +6,7 @@
 基于 PyTest 的企业级分层自动化测试框架，支持 API + UI 自动化，集成 GitHub Actions 持续集成，采用数据驱动与敏感信息环境变量管理。
 
 ## 技术栈
-- **语言**：Python 3.14
+- **语言**：Python 3.12
 - **框架**：PyTest + Requests + Playwright
 - **报告**：pytest-html
 - **CI/CD**：GitHub Actions
@@ -31,14 +31,11 @@
 pip install -r requirements.txt
 playwright install chromium
 
-# 2. 设置密码环境变量
+# 2. 设置密码环境变量（本地运行；CI 中由 common/loader 默认值兜底）
 $env:SAUCEDEMO_PASSWORD = "secret_sauce"
 
 # 3. 运行测试
 pytest testcases/ -v --html=report.html --self-contained-html
-
-# 4. 切换环境
-pytest testcases/ --env=staging
 
 核心特性
 分层架构：config / common / pages / testcases 职责分离
